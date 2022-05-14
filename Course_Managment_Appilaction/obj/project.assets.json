@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ismayil Hasanov\\source\\repos\\Course_Managment_Appilaction\\Course_Managment_Appilaction\\Course_Managment_Appilaction.csproj",
+      "projectUniqueName": "C:\\Users\\Ismayil Hasanov\\Desktop\\Course_Managment_Appilaction\\Course_Managment_Appilaction\\Course_Managment_Appilaction.csproj",
       "projectName": "Course_Managment_Appilaction",
-      "projectPath": "C:\\Users\\Ismayil Hasanov\\source\\repos\\Course_Managment_Appilaction\\Course_Managment_Appilaction\\Course_Managment_Appilaction.csproj",
+      "projectPath": "C:\\Users\\Ismayil Hasanov\\Desktop\\Course_Managment_Appilaction\\Course_Managment_Appilaction\\Course_Managment_Appilaction.csproj",
       "packagesPath": "C:\\Users\\Ismayil Hasanov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ismayil Hasanov\\source\\repos\\Course_Managment_Appilaction\\Course_Managment_Appilaction\\obj\\",
+      "outputPath": "C:\\Users\\Ismayil Hasanov\\Desktop\\Course_Managment_Appilaction\\Course_Managment_Appilaction\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

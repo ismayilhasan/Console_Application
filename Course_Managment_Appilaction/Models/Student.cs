@@ -13,11 +13,12 @@ namespace Course_Managment_Appilaction
         public string Group_No;
          public bool Type;
 
+        
+
         static Student() // static constructor
         {
             Count = 0;
-         
-           
+  
         }
          
         public Student(string fullname,byte enter_point,string group_no) : this(enter_point)

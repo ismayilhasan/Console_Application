@@ -10,10 +10,14 @@ namespace Course_Managment_Appilaction
         public int GroupCount;
         public bool IsOnline;
         byte Limit;
-        List<Student> StudentList;
+        Student student;
+        public List<Student> StudentList;
         Catagories Catagory = new Catagories();
 
+        public Group()
+        {
 
+        }
         public byte CheckLimit 
         {
            get
@@ -24,12 +28,12 @@ namespace Course_Managment_Appilaction
            {
                 if (IsOnline == true)
                 {
-                    Limit = 10;
+                    Limit = 15;
                     StudentList = new List<Student>(Limit);
                 }
                 else
                 {
-                    Limit = 15;
+                    Limit = 10;
                     StudentList = new List<Student>(Limit);
                 }
             }

@@ -7,14 +7,54 @@ namespace Course_Managment_Appilaction
     {
         static void Main(string[] args)
         {
-            Student student = new Student("Ismayil Hasanov", 100, "P324");
-            Student student2 = new Student("Ismayil A", 80, "P34");
 
-            Console.WriteLine(student.Id);
-            Console.WriteLine(student2.Id);
-            Console.WriteLine(Student.Count);
+            Console.WriteLine("Welcome to Course Managment Application");
+            int selection;
+
+            do
+            {
+                Console.WriteLine("1. Create Group");
+                Console.WriteLine("2. Edit Group");
+                Console.WriteLine("3. Show Groups");
+                Console.WriteLine("4.Create Student");
+                Console.WriteLine("5 .Show all Student");
+                Console.WriteLine("6. Remove Student");
+                Console.WriteLine("7. Show Student by Group");
+                Console.WriteLine("8. Exit");
+
+                bool result = int.TryParse(Console.ReadLine(), out selection);
+                Console.Clear();
+
+                switch (selection)
+                {
+                    case 1:
+                        break;
+
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    case 5:
+
+                        break;
+                    case 6:
+
+                        break;
+                    case 7:
+
+                        break;
+                }
+            } while (selection != 0);
             
-           
+            
+
+
+
         }
     }
 }
