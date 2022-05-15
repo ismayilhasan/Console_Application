@@ -19,3 +19,10 @@ C:\Users\Ismayil Hasanov\Desktop\Course_Managment_Appilaction\Course_Managment_A
 C:\Users\Ismayil Hasanov\Desktop\Course_Managment_Appilaction\Course_Managment_Appilaction\obj\Debug\netcoreapp3.1\Course_Managment_Appilaction.csproj.CoreCompileInputs.cache
 C:\Users\Ismayil Hasanov\Desktop\Course_Managment_Appilaction\Course_Managment_Appilaction\obj\Debug\netcoreapp3.1\Course_Managment_Appilaction.dll
 C:\Users\Ismayil Hasanov\Desktop\Course_Managment_Appilaction\Course_Managment_Appilaction\obj\Debug\netcoreapp3.1\Course_Managment_Appilaction.pdb
+C:\Users\Ismayil Hasanov\Desktop\Course_Managment_Appilaction\Course_Managment_Appilaction\bin\Debug\netcoreapp3.1\Course_Managment_Appilaction.exe
+C:\Users\Ismayil Hasanov\Desktop\Course_Managment_Appilaction\Course_Managment_Appilaction\bin\Debug\netcoreapp3.1\Course_Managment_Appilaction.deps.json
+C:\Users\Ismayil Hasanov\Desktop\Course_Managment_Appilaction\Course_Managment_Appilaction\bin\Debug\netcoreapp3.1\Course_Managment_Appilaction.runtimeconfig.json
+C:\Users\Ismayil Hasanov\Desktop\Course_Managment_Appilaction\Course_Managment_Appilaction\bin\Debug\netcoreapp3.1\Course_Managment_Appilaction.runtimeconfig.dev.json
+C:\Users\Ismayil Hasanov\Desktop\Course_Managment_Appilaction\Course_Managment_Appilaction\bin\Debug\netcoreapp3.1\Course_Managment_Appilaction.dll
+C:\Users\Ismayil Hasanov\Desktop\Course_Managment_Appilaction\Course_Managment_Appilaction\bin\Debug\netcoreapp3.1\Course_Managment_Appilaction.pdb
+C:\Users\Ismayil Hasanov\Desktop\Course_Managment_Appilaction\Course_Managment_Appilaction\obj\Debug\netcoreapp3.1\Course_Managment_Appilaction.genruntimeconfig.cache

@@ -8,30 +8,20 @@ namespace Course_Managment_Appilaction.Interfaces
     class CourseService : ICourseService
     {
 
-        List<Group> _Groups;
+        List<Group> _Groups = new List<Group>();
+        List<Student> _students = new List<Student>();
+        List<Student> Students => _students;
         public List<Group> Groups => _Groups;
 
-        public string CreateGroup(string no, Catagories catagory, bool isOnline)
+        public void CreateGroup(Catagories catagory, bool isOnline)
         {
-            Group group = new Group(no, catagory, isOnline);
+            Group group = new Group( catagory, isOnline);
 
-            if (_Groups.Count == 0)
-            {
-                Groups.Add(group);
-                return $"{group.No} Creating Process has done Succesfully";
-            }
+            _Groups.Add(group);
+            Console.WriteLine($"{group}  has done Succesfully");
 
 
-            foreach (Group existedGroup in Groups)
-            {
-                if (group.No.ToLower().Trim() != existedGroup.No.ToLower().Trim())
-                {
-                    _Groups.Add(group);
-                    return $"{group.No} successfully created";
-                }
-
-            }
-            return $"Hall cannot create \nAlready hall is existed";
+         
         }
 
         public Group FindGroup(string no)
@@ -49,22 +39,23 @@ namespace Course_Managment_Appilaction.Interfaces
 
         public void EditGroup(string OldNo, string NewNo)
         {
-            Group group = FindGroup(OldNo);
+            
             if (FindGroup(NewNo) == null)
             {
+                Group group = FindGroup(OldNo);
                 if (group != null)
                 {
-                    group.No = NewNo.ToUpper().Trim();
-                    Console.WriteLine($"{group.No} successfully edited");
+                    group.No = NewNo.ToLower().Trim();
+                    Console.WriteLine($"{group.No} successfully created");
                 }
                 else
                 {
-                    Console.WriteLine($"There is no hall => {OldNo.ToUpper()}");
+                    Console.WriteLine($"There is no group for editing {OldNo.ToUpper()}");
                 }
             }
             else
             {
-                Console.WriteLine($"There is hall => {NewNo.ToUpper()}");
+                Console.WriteLine($"This Group which you edit already existed {NewNo.ToUpper()}");
             }
         }
         public void ShowGroups()
@@ -73,7 +64,7 @@ namespace Course_Managment_Appilaction.Interfaces
             {
                 foreach (Group group in Groups)
                 {
-                    Console.WriteLine(group);
+                    Console.WriteLine($"Group :{group.No} {group.setLimit(group.IsOnline)}");
                 }
             }
         }
@@ -82,8 +73,10 @@ namespace Course_Managment_Appilaction.Interfaces
         {
             Student student = new Student(fullname, enter_point, group_no);
 
-            Group group = new Group();
-            group.StudentList.Add(student); // is contunie
+            _students.Add(student);
+
+            
+            
 
         }
 

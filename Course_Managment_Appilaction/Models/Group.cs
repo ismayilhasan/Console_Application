@@ -7,68 +7,101 @@ namespace Course_Managment_Appilaction
     class Group
     {
         public string No;
-        public int GroupCount;
+      
         public bool IsOnline;
         byte Limit;
         Student student;
         public List<Student> StudentList;
         Catagories Catagory = new Catagories();
+        public static int Count;
+
 
         public Group()
         {
-
+            StudentList = new List<Student>();
         }
-        public byte CheckLimit 
+        static Group()
         {
-           get
-           {
-                return Limit;
-           }
-          set
-           {
-                if (IsOnline == true)
-                {
-                    Limit = 15;
-                    StudentList = new List<Student>(Limit);
-                }
-                else
-                {
-                    Limit = 10;
-                    StudentList = new List<Student>(Limit);
-                }
-            }
-
-
+            Count = 0;
         }
+
+        public byte setLimit(bool isOnline)
+        {
+            if (isOnline == true)
+            {
+                Limit = 3;
+                return Limit;
+            }
+            else
+            {
+                Limit = 10;
+                return Limit;
+            }
+        }
+        //public byte CheckLimit 
+        //{
+        //   get
+        //   {
+        //        return Limit;
+        //   }
+        //  set
+        //   {
+        //        if (IsOnline == true)
+        //        {
+        //            Limit = 15;
+        //            StudentList = new List<Student>(Limit);
+        //        }
+        //        else
+        //        {
+        //            Limit = 10;
+        //            StudentList = new List<Student>(Limit);
+        //        }
+        //    }
+
+
+        //}
 
        
 
 
 
-        public Group(string no, Catagories catagory, bool isOnline)
+        public Group( Catagories catagory, bool isOnline)
         {
             switch (catagory)
             {
                 case Catagories.Programming:
-                    No = $"P" + GroupCount;
+                    No = $"P" + Count;
                     break;
                 case Catagories.Desing:
-                    No = $"D" + GroupCount;
+                    No = $"D" + Count;
                     break;
                 case Catagories.System_Administration:
-                    No = $"SA" + GroupCount;
+                    No = $"SA" + Count;
                     break;
                 default:
                     break;
             }
 
-            No = no;
+            
             Catagory = catagory;
             IsOnline = isOnline;
+            Count++;
 
-           
+            //Categories = category;
+
+            //IsOnline = isonline;
+            //++Count;
+            //CountName++;
+            //Count++;
+
+
         }
-        
+
+        public override string ToString()
+        {
+            return $"{No},{Catagory}";
+        }
+
 
     }
 }

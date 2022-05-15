@@ -8,7 +8,7 @@ namespace Course_Managment_Appilaction.Models
     {
 
         public List<Group> Groups { get; }
-        public String CreateGroup(string no, Catagories catagory, bool isOnline);
+        public void CreateGroup(Catagories catagory, bool isOnline);
 
         public void ShowGroups();
 

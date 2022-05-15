@@ -28,13 +28,14 @@ namespace Course_Managment_Appilaction
                 switch (selection)
                 {
                     case 1:
+                        MenuServives.CreateGroup();
                         break;
 
                     case 2:
-
+                        MenuServives.EditGroup();
                         break;
                     case 3:
-
+                        MenuServives.ShowAllGroup();
                         break;
                     case 4:
 

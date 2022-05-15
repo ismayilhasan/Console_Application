@@ -6,7 +6,7 @@ namespace Course_Managment_Appilaction
 {
     enum Catagories
     {
-        Programming,
+        Programming = 1,
         Desing,
         System_Administration,
     }
