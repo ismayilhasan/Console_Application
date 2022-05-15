@@ -14,7 +14,7 @@ namespace Course_Managment_Appilaction.Models
 
         public void EditGroup(string OldNo, string NewNo);
 
-        public void ShowStudentsByGroup();
+        public void ShowStudentsByGroup(string no);
 
         public void ShowAllStudents();
 

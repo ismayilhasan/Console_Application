@@ -38,13 +38,13 @@ namespace Course_Managment_Appilaction
                         MenuServives.ShowAllGroup();
                         break;
                     case 4:
-
+                        MenuServives.CreateStudent();
                         break;
                     case 5:
-
+                        MenuServives.ShowAllStudents();
                         break;
                     case 6:
-
+                        MenuServives.ShowStudentsByGroup();
                         break;
                     case 7:
 

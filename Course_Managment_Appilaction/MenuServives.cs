@@ -31,9 +31,14 @@ namespace Course_Managment_Appilaction
             {
                 group.IsOnline = true;
             }
-            else
+            else if(answer.ToLower().Trim() == "no")
             {
                 group.IsOnline = false;
+            }
+            else
+            {
+                Console.WriteLine("invalid answer \nPlease only yes or not ");
+               
             }
 
 
@@ -61,17 +66,28 @@ namespace Course_Managment_Appilaction
 
         public static void CreateStudent()
         {
-            Console.WriteLine("Enter the Name");
+            Console.WriteLine("Enter the Fullname");
             string fullname = Console.ReadLine();
-            Console.WriteLine("Enter the Surname");
             Console.WriteLine("Enter Your Entry Point");
             byte enterpoint = Convert.ToByte(Console.ReadLine());
+            Console.WriteLine("Enter Group Name");
             string groupNum = Console.ReadLine();
           
             courseService.CreateStudent(fullname,enterpoint,groupNum);
         }
 
 
+        public static void ShowAllStudents()
+        {
+            courseService.ShowAllStudents();
+        }
+
+        public static void ShowStudentsByGroup()
+        {
+            Console.WriteLine("Enter Group Number");
+            string groupNumber = Console.ReadLine();
+            courseService.ShowStudentsByGroup(groupNumber);
+        }
     }
 }
 

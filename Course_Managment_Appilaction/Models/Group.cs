@@ -10,11 +10,11 @@ namespace Course_Managment_Appilaction
       
         public bool IsOnline;
         byte Limit;
-        Student student;
+        
         public List<Student> StudentList;
         Catagories Catagory = new Catagories();
         public static int Count;
-
+        public static int Count_group;
 
         public Group()
         {
@@ -22,14 +22,15 @@ namespace Course_Managment_Appilaction
         }
         static Group()
         {
-            Count = 0;
+            Count = 100;
+            Count_group = 0;
         }
 
         public byte setLimit(bool isOnline)
         {
             if (isOnline == true)
             {
-                Limit = 3;
+                Limit = 15;
                 return Limit;
             }
             else
@@ -38,28 +39,7 @@ namespace Course_Managment_Appilaction
                 return Limit;
             }
         }
-        //public byte CheckLimit 
-        //{
-        //   get
-        //   {
-        //        return Limit;
-        //   }
-        //  set
-        //   {
-        //        if (IsOnline == true)
-        //        {
-        //            Limit = 15;
-        //            StudentList = new List<Student>(Limit);
-        //        }
-        //        else
-        //        {
-        //            Limit = 10;
-        //            StudentList = new List<Student>(Limit);
-        //        }
-        //    }
-
-
-        //}
+        
 
        
 
@@ -86,6 +66,7 @@ namespace Course_Managment_Appilaction
             Catagory = catagory;
             IsOnline = isOnline;
             Count++;
+            Count_group++;
 
             //Categories = category;
 
