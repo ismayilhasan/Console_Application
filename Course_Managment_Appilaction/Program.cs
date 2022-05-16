@@ -20,7 +20,8 @@ namespace Course_Managment_Appilaction
                 Console.WriteLine("5 .Show all Student");
                 Console.WriteLine("6. Remove Student");
                 Console.WriteLine("7. Show Student by Group");
-                Console.WriteLine("8. Exit");
+                Console.WriteLine("8.Find Student");
+                Console.WriteLine("0. Exit");
 
                 bool result = int.TryParse(Console.ReadLine(), out selection);
                 Console.Clear();
@@ -44,18 +45,32 @@ namespace Course_Managment_Appilaction
                         MenuServives.ShowAllStudents();
                         break;
                     case 6:
-                        MenuServives.ShowStudentsByGroup();
+                        MenuServives.RemoveStudent();
                         break;
                     case 7:
-
+                        MenuServives.ShowStudentsByGroup();
                         break;
+                    case 8:
+                        MenuServives.findStudent();
+                        break;
+                    //Console.WriteLine("program is closed");
+                    //break;
+                    case 0:
+
+                        Console.WriteLine("Program is closed");
+                      
+                        break;
+                    default :
+                        Console.WriteLine("Something went wrong ");
+                        break;
+                        
                 }
             } while (selection != 0);
+
+
+
             
             
-
-
-
         }
     }
 }

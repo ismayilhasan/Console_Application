@@ -25,6 +25,9 @@ namespace Course_Managment_Appilaction
 
             bool resultCategory = Enum.TryParse(typeof(Catagories), Console.ReadLine(), out category);
 
+           
+
+
             Console.WriteLine("is it Group online Yes/No");
             answer = Console.ReadLine();
             if (answer.ToLower().Trim() == "yes")
@@ -68,11 +71,37 @@ namespace Course_Managment_Appilaction
         {
             Console.WriteLine("Enter the Fullname");
             string fullname = Console.ReadLine();
-            Console.WriteLine("Enter Your Entry Point");
-            byte enterpoint = Convert.ToByte(Console.ReadLine());
+
+            
+            if (string.IsNullOrEmpty(fullname) || string.IsNullOrWhiteSpace(fullname))
+            {
+                Console.WriteLine("Invalid Input");
+                Console.WriteLine("Try again");
+                fullname = Console.ReadLine();
+            }
+            Console.WriteLine("Enter  Entry Point");
+            
+            byte enterpoint;
+            bool resultPoint = byte.TryParse(Console.ReadLine(), out enterpoint);
+
+            while(resultPoint != true)
+            {
+                    Console.WriteLine("Invalid Input");
+
+                     enterpoint = Convert.ToByte(Console.ReadLine());
+
+                
+                
+
+            }
+            
+
+
             Console.WriteLine("Enter Group Name");
             string groupNum = Console.ReadLine();
           
+
+
             courseService.CreateStudent(fullname,enterpoint,groupNum);
         }
 
@@ -87,6 +116,23 @@ namespace Course_Managment_Appilaction
             Console.WriteLine("Enter Group Number");
             string groupNumber = Console.ReadLine();
             courseService.ShowStudentsByGroup(groupNumber);
+        }
+
+        public static void RemoveStudent()
+        {
+            Console.WriteLine("Write Group Code Please ");
+            string group_no = Console.ReadLine();
+            Console.WriteLine("Please Enter Id of Student");
+            int id = Convert.ToInt32(Console.ReadLine());
+            courseService.RemoveStudent(group_no, id);
+        }
+
+        public static void findStudent()
+        {
+            Console.WriteLine("Enter ID of Student");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(courseService.FindStudent(id) ); 
+
         }
     }
 }

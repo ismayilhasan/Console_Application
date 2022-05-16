@@ -20,7 +20,7 @@ namespace Course_Managment_Appilaction.Models
 
         public void CreateStudent(string fullname, byte enter_point, string group_no);
 
-        public void RemoveStudent();
+        public void RemoveStudent(string group_no, int id);
         
 
     }

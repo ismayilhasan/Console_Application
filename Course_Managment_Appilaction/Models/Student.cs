@@ -13,8 +13,11 @@ namespace Course_Managment_Appilaction
         public string Group_No;
          public bool Type;
 
-        
 
+        public Student()
+        {
+
+        }
         static Student() // static constructor
         {
             Count = 0;
@@ -43,6 +46,15 @@ namespace Course_Managment_Appilaction
             {
                 Type = false;
             }
+        }
+
+        public override string ToString()
+        {
+            if(Type == true)
+            {
+                return $"Fullname : {Fullname} Group  :  {Group_No} ID : {Id} Status : Guarenteed  ";
+            }
+            return $"Fullname : {Fullname} Group :  {Group_No} ID : {Id} Status : not guarenteed  ";
         }
     }
 }

@@ -15,15 +15,16 @@ namespace Course_Managment_Appilaction.Interfaces
 
         public void CreateGroup(Catagories catagory, bool isOnline)
         {
-            Group group = new Group( catagory, isOnline);
+
+            Group group = new Group(catagory, isOnline);
 
             _Groups.Add(group);
 
-            if(isOnline == true )
+            if (isOnline == true)
             {
                 Console.WriteLine($"{group.No}  has done Succesfully");
             }
-            else if(isOnline == false)
+            else if (isOnline == false)
             {
                 Console.WriteLine($"{group.No}  has done Succesfully");
             }
@@ -31,13 +32,26 @@ namespace Course_Managment_Appilaction.Interfaces
             {
                 Console.WriteLine("Try again ");
             }
-            
-           
 
 
-         
+
+
+
         }
 
+
+        public Student FindStudent(int id)
+        {
+            foreach (Student student in Students)
+            {
+                if (student.Id == id)
+                {
+                    return student;
+                }
+
+            }
+            return null;
+        }
         public Group FindGroup(string no)
         {
             foreach (Group group in Groups)
@@ -53,12 +67,14 @@ namespace Course_Managment_Appilaction.Interfaces
 
         public void EditGroup(string OldNo, string NewNo)
         {
-            
+
             if (FindGroup(NewNo) == null)
             {
                 Group group = FindGroup(OldNo);
                 if (group != null)
                 {
+
+
                     group.No = NewNo.ToLower().Trim();
                     Console.WriteLine($"{group.No} successfully created");
                 }
@@ -74,15 +90,19 @@ namespace Course_Managment_Appilaction.Interfaces
         }
         public void ShowGroups()
         {
-            if(Groups.Count > 0)
+            if (Groups.Count > 0)
             {
                 foreach (Group group in Groups)
-                {                    
-                    if(group.IsOnline == true)
+                {
+                    if (group.IsOnline == true)
                     {
                         Console.WriteLine($"Group :{group.No}   status : online \n ");
                     }
-                   
+                    else
+                    {
+                        Console.WriteLine($"Group :{group.No}   status : ofline \n ");
+                    }
+
                 }
             }
             else
@@ -93,70 +113,126 @@ namespace Course_Managment_Appilaction.Interfaces
 
         public void CreateStudent(string fullname, byte enter_point, string group_no)
         {
-            if(Group.Count_group > 0)
+            
+            if (Group.Count_group > 0)
             {
                 Student student = new Student(fullname, enter_point, group_no);
-               
-                if(string.IsNullOrEmpty(student.Fullname) || string.IsNullOrWhiteSpace(student.Fullname))
+
+                if (string.IsNullOrEmpty(student.Fullname) || string.IsNullOrWhiteSpace(student.Fullname))
                 {
                     Console.WriteLine("invalid input \nStudent can not create ");
-                    
+
                 }
                 else
                 {
-                    Console.WriteLine($"Name: {fullname}  Group Number{group_no}");
+
                     Students.Add(student);
-                    Group group = new Group();
-                    foreach (var existedstudent in FindGroup(group_no).StudentList)
-                    {
-                        if(existedstudent == student)
-                        {
-                            group.StudentList.Add(student);
-                        }
-                        else
-                        {
-                            Console.WriteLine("There is not this type of group");
-                        }
-                    }
+                    Group group = FindGroup(group_no);
+                    //group.StudentList = new List<Student>();
+                    group.StudentList.Add(student);
                   
+                    if (group == null)
+                    {
+                        Console.WriteLine("Group not found");
+                        return;
+                    }
+                    if (group.StudentList.Count >= group.Limit)
+                    {
+                        Console.WriteLine("There is no space for adding student");
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("adding is succesful");
+                    }
+                    Console.WriteLine($"fullname: {student.Fullname}  Group Number : {student.Group_No}");
+
+                    
                 }
             }
-            else 
+            else
             {
                 Console.WriteLine("There is no group for adding student");
             }
 
-          
+
         }
 
-        public void RemoveStudent()
+        public void RemoveStudent(string group_no, int id)
         {
-            throw new NotImplementedException();
+
+
+            Group group = FindGroup(group_no);
+
+            if (group == null)
+            {
+                Console.WriteLine("There is not group with this name");
+                return;
+            }
+
+            if (group.StudentList.Count == 0)
+            {
+                Console.WriteLine("There is no student in the group");
+                return;
+            }
+
+            foreach (var item in group.StudentList)
+            {
+                if (item.Id == id)
+                {
+
+                    group.StudentList.Remove(item);
+                    Console.WriteLine("Student is removed succesfully");
+                    return;
+                }
+            }
+            Console.WriteLine(id+ "student not found");
+
         }
 
-      
+
 
         public void ShowAllStudents()
         {
-            foreach (Group group in Groups)
+            if(Students.Count > 0)
             {
-                foreach (Student student in group.StudentList)
+                foreach (Group group in Groups)
                 {
-                    Console.WriteLine($"Fullname : {student.Fullname} Group : {group} :   " );
+                    foreach (Student student in group.StudentList)
+                    {
+                        Console.WriteLine($"Fullname : {student.Fullname} Group : {group} : Id : {student.Id}    ");
+                    }
                 }
             }
+            else
+            {
+                Console.WriteLine("There is no student for showing");
+            }
+          
         }
 
-      
+
 
         public void ShowStudentsByGroup(string no)
         {
+
             Group group = FindGroup(no);
+
             if (group != null)
             {
-                foreach (Student students in _students)
+
+                foreach (Student students in group.StudentList)
                 {
-                    Console.WriteLine(students);
+
+                    if (students.Type == true)
+                    {
+                        Console.WriteLine($"Fullname : {students.Fullname} status  : Guarenteed student ");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Fullname : {students.Fullname}  status : not guarenteed");
+                    }
+
                 }
             }
             else
@@ -165,7 +241,7 @@ namespace Course_Managment_Appilaction.Interfaces
             }
         }
 
-        
-       
+
+
     }
 }
