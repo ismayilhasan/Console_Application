@@ -69,16 +69,26 @@ namespace Course_Managment_Appilaction
 
         public static void CreateStudent()
         {
-            Console.WriteLine("Enter the Fullname");
-            string fullname = Console.ReadLine();
 
-            
-            if (string.IsNullOrEmpty(fullname) || string.IsNullOrWhiteSpace(fullname))
+            string fullname;
+            string group_no;
+            do
             {
-                Console.WriteLine("Invalid Input");
-                Console.WriteLine("Try again");
+
+                Console.WriteLine("Enter the Fullname");
                 fullname = Console.ReadLine();
+
             }
+            while (string.IsNullOrEmpty(fullname) || string.IsNullOrWhiteSpace(fullname));
+
+            do
+            {
+                Console.WriteLine("Enter Group Name");
+                group_no = Console.ReadLine();
+            } while (string.IsNullOrEmpty(group_no) || string.IsNullOrWhiteSpace(group_no));
+            
+
+         
             Console.WriteLine("Enter  Entry Point");
             
             byte enterpoint;
@@ -90,19 +100,10 @@ namespace Course_Managment_Appilaction
 
                      enterpoint = Convert.ToByte(Console.ReadLine());
 
-                
-                
-
+               
             }
-            
 
-
-            Console.WriteLine("Enter Group Name");
-            string groupNum = Console.ReadLine();
-          
-
-
-            courseService.CreateStudent(fullname,enterpoint,groupNum);
+            courseService.CreateStudent(fullname,enterpoint,group_no);
         }
 
 

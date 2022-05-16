@@ -58,7 +58,6 @@ namespace Course_Managment_Appilaction
                     case 0:
 
                         Console.WriteLine("Program is closed");
-                      
                         break;
                     default :
                         Console.WriteLine("Something went wrong ");

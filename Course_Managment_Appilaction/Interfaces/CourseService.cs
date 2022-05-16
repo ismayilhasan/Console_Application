@@ -13,6 +13,8 @@ namespace Course_Managment_Appilaction.Interfaces
         List<Student> Students => _students;
         public List<Group> Groups => _Groups;
 
+
+        //********************************Creat Group***********************
         public void CreateGroup(Catagories catagory, bool isOnline)
         {
 
@@ -39,7 +41,7 @@ namespace Course_Managment_Appilaction.Interfaces
 
         }
 
-
+        //********************************FindStudent***********************
         public Student FindStudent(int id)
         {
             foreach (Student student in Students)
@@ -52,6 +54,7 @@ namespace Course_Managment_Appilaction.Interfaces
             }
             return null;
         }
+        //********************************FindGroup***********************
         public Group FindGroup(string no)
         {
             foreach (Group group in Groups)
@@ -64,7 +67,7 @@ namespace Course_Managment_Appilaction.Interfaces
             return null;
         }
 
-
+        //********************************EditGroup***********************
         public void EditGroup(string OldNo, string NewNo)
         {
 
@@ -88,6 +91,7 @@ namespace Course_Managment_Appilaction.Interfaces
                 Console.WriteLine($"This Group which you edit already existed {NewNo.ToUpper()}");
             }
         }
+        //********************************ShowGroup***********************
         public void ShowGroups()
         {
             if (Groups.Count > 0)
@@ -110,7 +114,7 @@ namespace Course_Managment_Appilaction.Interfaces
                 Console.WriteLine("There is no group for showing \n");
             }
         }
-
+        //********************************CreateStudent***********************
         public void CreateStudent(string fullname, byte enter_point, string group_no)
         {
             
@@ -157,7 +161,7 @@ namespace Course_Managment_Appilaction.Interfaces
 
 
         }
-
+        //********************************removeStudent***********************
         public void RemoveStudent(string group_no, int id)
         {
 
@@ -191,7 +195,7 @@ namespace Course_Managment_Appilaction.Interfaces
         }
 
 
-
+        //********************************ShowAllStudent***********************
         public void ShowAllStudents()
         {
             if(Students.Count > 0)
@@ -206,13 +210,13 @@ namespace Course_Managment_Appilaction.Interfaces
             }
             else
             {
-                Console.WriteLine("There is no student for showing");
+                Console.WriteLine("There is no student for showing \n\n");
             }
           
         }
 
 
-
+        //********************************ShowStudentsByGroup***********************
         public void ShowStudentsByGroup(string no)
         {
 
@@ -226,11 +230,11 @@ namespace Course_Managment_Appilaction.Interfaces
 
                     if (students.Type == true)
                     {
-                        Console.WriteLine($"Fullname : {students.Fullname} status  : Guarenteed student ");
+                        Console.WriteLine($"Fullname : {students.Fullname} status  : Guarenteed     Id : {students.Id} ");
                     }
                     else
                     {
-                        Console.WriteLine($"Fullname : {students.Fullname}  status : not guarenteed");
+                        Console.WriteLine($"Fullname : {students.Fullname}  status : not guarenteed        Id : {students.Id}");
                     }
 
                 }
