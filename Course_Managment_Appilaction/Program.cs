@@ -15,7 +15,6 @@ namespace Course_Managment_Appilaction
             {
                 Console.WriteLine("1. Create Group");
                 Console.WriteLine("2. Edit Group");
-                Console.WriteLine("3. Show Groups");
                 Console.WriteLine("4.Create Student");
                 Console.WriteLine("5 .Show all Student");
                 Console.WriteLine("6. Remove Student");
